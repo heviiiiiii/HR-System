@@ -1,0 +1,1155 @@
+/* ============================================
+   QIU Portal - Complete Unified Stylesheet
+   Qaiwan International University
+   Works for: Login, Register, Dashboard, Admin, HR, Employee pages
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================
+   Authentication Pages (Login/Register/Forgot)
+   ============================================ */
+.auth-page {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0e244c 0%, #1a5dc9 50%, #0e244c 100%);
+    background-image: url("../images/qiu.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0e244c 0%, #1a5dc9 50%, #0e244c 100%);
+    background-image: url("../images/qiu.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.auth-logo {
+    position: fixed;
+    top: 0;
+    left: 69px;
+    width: 140px;
+    height: 170px;
+    background: #f0f5fb;
+    border-radius: 20px 20px 60px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.auth-logo img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+.auth-container {
+    position: relative;
+    background: rgba(166, 166, 155, 0.08);
+    backdrop-filter: blur(6px);
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.auth-container h2 {
+    margin: 15px 0;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #0e244c;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 14px;
+}
+
+.auth-container input::placeholder {
+    color: #888888;
+}
+
+.auth-container input:focus {
+    outline: none;
+    border-color: #1a5dc9;
+    box-shadow: 0 0 0 3px rgba(26, 93, 201, 0.2);
+}
+
+.auth-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    color: #333333;
+    font-size: 14px;
+}
+
+.forgot-link {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    color: #0e244c;
+}
+
+.forgot-link:hover {
+    color: #1a5dc9;
+}
+
+.login-btn,
+.auth-container button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #0e244c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-btn:hover,
+.auth-container button[type="submit"]:hover {
+    background: #1a5dc9;
+}
+
+.auth-or {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.social-buttons button {
+    width: 48%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+}
+
+.btn-google {
+    background: #db4437;
+}
+
+.btn-google:hover {
+    background: #e26e64;
+}
+
+.btn-github {
+    background: #6d6767;
+}
+
+.btn-github:hover {
+    background: #b5b5b5;
+}
+
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.auth-link a {
+    color: #1a5dc9;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.auth-link a:hover {
+    color: #0e244c;
+}
+
+/* Auth Footer */
+.auth-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(22, 50, 80, 0.95);
+    font-size: 13px;
+    color: #ffffffcc;
+    z-index: 10;
+}
+
+.footer-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-footer a {
+    color: #6fa1e2;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: #a0c4fe;
+}
+
+.auth-container .alert {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* ============================================
+   Dashboard Layout (Works for ALL dashboards)
+   Supports both .dashboard and .dashboard-container
+   ============================================ */
+.dashboard,
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============================================
+   Sidebar (Universal)
+   ============================================ */
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-header .logo {
+    width: 80px;
+    height: auto;
+}
+
+.sidebar-header h2 {
+    font-size: 18px;
+    color: #0e244c;
+    margin-top: 10px;
+}
+
+.sidebar-logo {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0e244c;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Profile Box in Sidebar */
+.profile-box {
+    background: #eef4ff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-box img,
+.profile-box .profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-box h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0e244c;
+    margin-bottom: 4px;
+}
+
+.profile-box p,
+.profile-box span {
+    font-size: 12px;
+    color: #475569;
+}
+
+/* ============================================
+   Navigation Menu (Supports both nav-menu and sidebar-nav)
+   ============================================ */
+.nav-menu,
+.sidebar-nav {
+    flex: 1;
+    list-style: none;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-menu li {
+    margin-bottom: 6px;
+}
+
+.nav-menu a,
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active,
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #eef0ff;
+    color: #0e244c;
+}
+
+.nav-menu a i,
+.sidebar-nav a i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.nav-menu .logout a {
+    color: #dc2626;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 10px;
+    padding-top: 12px;
+}
+
+/* ============================================
+   Main Content Area
+   ============================================ */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f4f6f9;
+}
+
+/* Topbar */
+.topbar {
+    background: #0e244c;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.back-btn {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-btn:hover {
+    color: #a8c1ff;
+}
+
+/* Content Area */
+.content {
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Content Header */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 30px;
+    padding-top: 30px;
+}
+
+.content-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0e244c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0e244c;
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0e244c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+    padding: 0 30px;
+}
+
+.card-stat {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-stat h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.card-stat p {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 8px;
+    color: #0e244c;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sections Grid */
+.sections {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
+    padding: 0 30px;
+}
+
+/* ============================================
+   Tables
+   ============================================ */
+.table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.table-header {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table,
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+.table th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    background: #eef0ff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+td,
+.table td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+    vertical-align: middle;
+}
+
+tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tr:hover {
+    background: #eef0ff;
+}
+
+.table-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* ============================================
+   Forms
+   ============================================ */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    max-width: 600px;
+}
+
+.form-card h3 {
+    margin-bottom: 20px;
+    color: #0e244c;
+    font-size: 18px;
+}
+
+.filter-form .form-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a5dc9;
+    box-shadow: 0 0 0 3px rgba(26, 93, 201, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #0e244c;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1a5dc9;
+}
+
+.btn-success {
+    background: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-warning {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #d97706;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Action Buttons in Tables */
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btns .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* ============================================
+   Status & Badges
+   ============================================ */
+.status {
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status.active,
+.status.ongoing { 
+    background: #dbeafe; 
+    color: #1d4ed8; 
+}
+
+.status.completed,
+.status.approved { 
+    background: #dcfce7; 
+    color: #15803d; 
+}
+
+.status.pending,
+.status.leave { 
+    background: #fef9c3; 
+    color: #a16207; 
+}
+
+.status.rejected,
+.status.inactive { 
+    background: #fee2e2; 
+    color: #b91c1c; 
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-success { background: #dcfce7; color: #15803d; }
+.badge-warning { background: #fef9c3; color: #a16207; }
+.badge-danger { background: #fee2e2; color: #b91c1c; }
+.badge-info { background: #dbeafe; color: #1d4ed8; }
+
+/* ============================================
+   Notices (Announcements)
+   ============================================ */
+.notice {
+    background: #fffbe6;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid #facc15;
+    transition: box-shadow 0.3s;
+}
+
+.notice:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.notice h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1f2937;
+}
+
+.notice p {
+    font-size: 13px;
+    color: #374151;
+}
+
+/* ============================================
+   Alerts
+   ============================================ */
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.alert-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+
+.alert-warning {
+    background: #fef9c3;
+    color: #a16207;
+    border: 1px solid #fde047;
+}
+
+.alert-info {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #93c5fd;
+}
+
+/* ============================================
+   Employee Dashboard Layout (Top Header Style)
+   ============================================ */
+.top-header {
+    background: #0e244c;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.wrapper {
+    padding: 25px;
+}
+
+.page-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 19px;
+    color: #1f2937;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.main-box {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Profile Row */
+.profile-row {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #c5c5c5;
+    align-items: center;
+}
+
+.profile-photo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-right: 19px;
+}
+
+.profile-btn {
+    background: #0e2859;
+    color: white;
+    text-decoration: none;
+    padding: 7px 19px;
+    font-size: 13px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.profile-btn:hover {
+    background: #1a5dc9;
+}
+
+/* Leave Balance */
+.leave-balance {
+    padding: 20px;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.leave-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+    margin-top: 13px;
+}
+
+.leave-box {
+    background: #f7f7f7;
+    padding: 10px;
+    font-size: 13px;
+    position: relative;
+}
+
+.leave-box span {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #7cb342;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Accordion */
+.accordion {
+    border-top: 1px solid #ddd;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.accordion-header a {
+    color: #0e2859;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.accordion-header a:hover {
+    text-decoration: underline;
+}
+
+.accordion-content {
+    padding: 12px 16px;
+    font-size: 13px;
+}
+
+.pay-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pay-links a {
+    margin-right: 15px;
+    color: #0b5ed7;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.pay-links a:hover {
+    text-decoration: underline;
+}
+
+/* Side Panel */
+.side-panel {
+    background: #fff;
+    border: 1px solid #ddd;
+    height: fit-content;
+}
+
+.side-header {
+    padding: 10px;
+    font-weight: bold;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+.primary-btn {
+    margin: 10px;
+    background: #0b5ed7;
+    color: white;
+    border: none;
+    width: calc(100% - 20px);
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.primary-btn:hover {
+    background: #0a4ab3;
+}
+
+.side-links {
+    padding: 10px;
+}
+
+.side-links a {
+    display: block;
+    padding: 6px 0;
+    font-size: 13px;
+    color: #0b5ed7;
+    text-decoration: none;
+}
+
+.side-links a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Job Cards (Careers Page)
+   ============================================ */
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.job-card h3 {
+    color: #0e244c;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.job-card p {
+    color: #475569;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.job-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.job-meta i {
+    color: #1a5dc9;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.hidden { display: none; }
+.flex { display: flex; }
+.gap-10 { gap: 10px; }
+.gap-20 { gap: 20px; }
