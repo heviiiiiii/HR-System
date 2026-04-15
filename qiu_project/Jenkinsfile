@@ -11,14 +11,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 dir('qiu_project') {
-                    sh 'docker build -t heviiiiiii/app .'
+                    bat 'docker build -t heviiiiiii/app .'
                 }
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 8081:80 heviiiiiii/app'
+                bat 'docker run -d -p 8081:80 heviiiiiii/app'
             }
         }
     }
