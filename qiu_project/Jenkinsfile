@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/heviiiiiii/HR-System.git'
@@ -11,17 +10,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build("my-app")
+                dir('qiu_project') {
+                    sh 'docker build -t heviiiiiii/app .'
                 }
             }
         }
 
         stage('Run Container') {
             steps {
-                script {
-                    sh 'docker run -d -p 9090:80 my-app'
-                }
+                sh 'docker run -d -p 8081:80 heviiiiiii/app'
             }
         }
     }
