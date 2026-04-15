@@ -21,5 +21,11 @@ pipeline {
                 bat 'docker run -d -p 8081:80 heviiiiiii/app'
             }
         }
+        stage('Docker Login & Push') {
+    steps {
+        bat 'docker login -u hevi -p YOUR_PASSWORD'
+        bat 'docker push hevi/app'
+    }
+}
     }
 }
