@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Clone Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/heviiiiiii/HR-System.git'
@@ -18,14 +19,26 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8081:80 heviiiiiii/app'
+                bat 'docker rm -f app-container || exit 0'
+                bat 'docker run -d -p 9090:80 --name app-container heviiiiiii/app'
             }
         }
+
+        stage('Test Application') {
+            steps {
+                echo 'Checking if container is running...'
+                bat 'docker ps'
+
+                echo 'Checking application accessibility...'
+                bat 'curl -f http://localhost:9090/login.php'
+            }
+        }
+
         stage('Docker Login & Push') {
-    steps {
-        bat 'docker login -u hevi -p YOUR_PASSWORD'
-        bat 'docker push hevi/app'
-    }
-}
+            steps {
+                bat 'docker login -u heviiiiiii -p YOUR_PASSWORD'
+                bat 'docker push heviiiiiii/app'
+            }
+        }
     }
 }
