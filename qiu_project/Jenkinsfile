@@ -36,8 +36,10 @@ pipeline {
 
         stage('Docker Login & Push') {
             steps {
-                bat 'docker login -u heviiiiiii -p YOUR_PASSWORD'
-                bat 'docker push heviiiiiii/app'
+                withCredentials([usernamePassword(credentialsId: 'docker-cred', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    bat 'docker login -u %USER% -p %PASS%'
+                    bat 'docker push heviiiiiii/app'
+                }
             }
         }
     }
