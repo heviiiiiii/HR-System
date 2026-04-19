@@ -8,3 +8,4 @@ RUN chown -R www-data:www-data /var/www/html
 
 # Expose Apache port
 EXPOSE 80
+RUN echo "DOCKERFILE CHANGED SUCCESS" > /var/www/html/test.txt
