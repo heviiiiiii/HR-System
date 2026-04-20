@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     
     <div class="auth-container">
-        <h2>NEW VERSION LOGIN</h2>
+        <h2>Qaiwan international university</h2>
         
         <?php if ($error): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
